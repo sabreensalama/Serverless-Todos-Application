@@ -6,10 +6,31 @@
     "properties": {
       "name": {
         "type": "string"
-      }
+      },
+      "userId":{
+        "type": "string"
+      },
+      "todoId":{
+        "type": "string"
+      },
+      "createdAt":{
+        "type": "string"
+      },
+      "dueDate":{
+        "type": "string"
+      },
+      "done":{
+        "type": "boolean"
+      },
+      "attachmentUrl?":{
+        "type": "string"
+      } 
     },
     "required": [
-      "name"
+      "name",
+      "userId",
+      "todoId",
+      "createdAt"
 
 
     ],

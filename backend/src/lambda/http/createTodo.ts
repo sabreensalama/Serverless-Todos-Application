@@ -5,6 +5,7 @@ import * as AWS from 'aws-sdk'
 import * as uuid from 'uuid'
 import { CreateTodoRequest } from '../../requests/CreateTodoRequest'
 import { getUserId } from '../utils'
+
  
 const docClient = new AWS.DynamoDB.DocumentClient()
 const todosTable = process.env.TODOS_TABLE
