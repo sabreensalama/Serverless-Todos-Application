@@ -1,33 +1,33 @@
-import * as uuid from 'uuid'
+// import * as uuid from 'uuid'
 import { TodoItem } from '../models/TodoItem'
 import { TodoAccess } from '../dataLayer/todos'
-import { CreateTodoRequest } from '../requests/CreateTodoRequest'
+// import { CreateTodoRequest } from '../requests/CreateTodoRequest'
 import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
-import { createLogger } from '../utils/logger'
+// import { createLogger } from '../utils/logger'
 
-const logger = createLogger('auth')
+// const logger = createLogger('auth')
 
 const todoAccess = new TodoAccess()
 
 
-export async function createTodo(
-  createTodoRequest: CreateTodoRequest,
-  userId: string
-): Promise<TodoItem> {
-  logger.info('Generating uuid...')
+// export async function createTodo(
+//   createTodoRequest: CreateTodoRequest,
+//   userId: string
+// ): Promise<TodoItem> {
+//   logger.info('Generating uuid...')
 
-  const todoId = uuid.v4()
-  const createdAt = new Date().getTime().toString()
+//   const todoId = uuid.v4()
+//   const createdAt = new Date().getTime().toString()
 
-  return await todoAccess.createTodo({
-    userId,
-    todoId,
-    createdAt,
-    done: false,
-    ...createTodoRequest,
-  })
+//   // return await todoAccess.createTodo({
+//   //   userId,
+//   //   createdAt,
+//   //   todoId,
+//   //   done: false,
+//   //   ...createTodoRequest,
+//   // })
 
-}
+// }
 
 export async function getTodos(userId: string): Promise<TodoItem[]> {
   return await todoAccess.getTodos(userId)

@@ -14,15 +14,15 @@ export class TodoAccess {
     private readonly Index = process.env.INDEX_NAME
      ) {}
 
-  async createTodo(todo: TodoItem): Promise<TodoItem> {
-    await this.docClient.put({
-        TableName: this.todosTable,
-        "Item": todo
-      })
-      .promise()
+  // async createTodo(todo: TodoItem): Promise<TodoItem> {
+  //   await this.docClient.put({
+  //       TableName: this.todosTable,
+  //        Item : todo
+  //     })
+  //     .promise()
 
-    return todo
-  }
+  //   return todo
+  // }
 
   async getTodos(userId: string): Promise<TodoItem[]> {
     const result = await this.docClient
